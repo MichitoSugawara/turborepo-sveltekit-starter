@@ -1,0 +1,32 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model auth_key {
+  id              String  @id @unique
+  hashed_password String?
+  user_id         String
+  primary_key     Boolean
+  expires         BigInt?
+
+  @@index([user_id])
+}
+
+model auth_session {
+  id             String @id @unique
+  user_id        String
+  active_expires BigInt
+  idle_expires   BigInt
+
+  @@index([user_id])
+}
+
+model auth_user {
+  id       String  @id @unique
+  username String? @unique
+}

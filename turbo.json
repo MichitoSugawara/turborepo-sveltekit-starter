@@ -1,0 +1,25 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "pipeline": {
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": ["dist/**", ".vercel/**", ".svelte-kit/**"]
+    },
+    "lint": {},
+    "dev": {
+      "dependsOn": ["@self/prisma#build"],
+      "cache": false,
+      "persistent": true
+    },
+    "clean": {
+      "cache": false
+    },
+    "test": {
+      "cache": false
+    },
+    "db:migrate": {},
+    "db:push": {},
+    "db:pull": {},
+    "db:seed": {}
+  }
+}

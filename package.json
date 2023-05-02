@@ -1,0 +1,27 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint",
+    "format": "prettier --write .",
+    "clean": "turbo run clean && rm -rf node_modules",
+    "test": "turbo run test",
+    "db:migrate": "turbo run db:migrate",
+    "db:push": "turbo run db:push",
+    "db:pull": "turbo run db:pull",
+    "db:seed": "turbo run db:seed",
+    "env:devcontainer": "cp ./packages/prisma/.env.devcontainer  ./packages/prisma/.env",
+    "init": "pnpm i && pnpm run build && pnpm run db:push",
+    "refresh": "pnpm run clean && pnpm run init",
+    "check": "pnpm run format && pnpm run lint && pnpm run test"
+  },
+  "devDependencies": {
+    "eslint": "^8.39.0",
+    "eslint-config-custom": "workspace:*",
+    "prettier": "^2.8.8",
+    "prettier-plugin-svelte": "^2.10.0",
+    "turbo": "latest"
+  },
+  "packageManager": "pnpm@7.15.0"
+}

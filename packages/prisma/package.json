@@ -1,0 +1,24 @@
+{
+  "name": "@self/prisma",
+  "version": "0.0.0",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "pnpm exec prisma generate && tsc --declaration",
+    "dev": "pnpm exec prisma studio",
+    "db:migrate": "pnpm exec prisma migrate dev",
+    "db:push": "pnpm exec prisma db push",
+    "db:pull": "pnpm exec prisma db pull",
+    "db:seed": "pnpm exec prisma db seed",
+    "clean": "rm -rf node_modules dist .turbo"
+  },
+  "devDependencies": {
+    "@types/node": "^18.16.0",
+    "prisma": "^4.13.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.7.2"
+  },
+  "dependencies": {
+    "@prisma/client": "^4.13.0"
+  }
+}
