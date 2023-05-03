@@ -2,17 +2,18 @@ version: '3.8'
 
 services:
   db:
-    image: mysql:8.0
-    container_name: project_db
-    environment:
-      MYSQL_ROOT_PASSWORD: password
-      MYSQL_DATABASE: some_db
-      MYSQL_USER: user
-      MYSQL_PASSWORD: password
-    ports:
-      - '3306:3306'
+    image: postgres:latest
+    restart: unless-stopped
     volumes:
-      - ./db-data/db:/var/lib/mysql
+      - ./db-data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_DB: postgres
+    ports:
+      - '5432:5432'
+    # Add "forwardPorts": ["5432"] to **devcontainer.json** to forward PostgreSQL locally.
+    # (Adding the "ports" property to this file will not forward from a Codespace.)
 
 volumes:
   db-data:
