@@ -14,6 +14,7 @@
     "db:seed": "turbo run db:seed",
     "env:devcontainer": "cp ./packages/prisma/.env.devcontainer  ./packages/prisma/.env",
     "init": "pnpm i && pnpm run build && pnpm run db:push",
+    "reinit": "pnpm run clean && npm i && pnpm run build && pnpm run db:push",
     "refresh": "pnpm run clean && pnpm i && pnpm run build",
     "check": "pnpm run format && pnpm run lint && pnpm run test"
   },

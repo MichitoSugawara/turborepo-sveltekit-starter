@@ -29,7 +29,6 @@
   },
   "type": "module",
   "dependencies": {
-    "@self/zod": "workspace:*",
     "daisyui": "^2.51.6"
   }
 }
