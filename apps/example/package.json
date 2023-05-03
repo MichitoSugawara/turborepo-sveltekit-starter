@@ -1,0 +1,26 @@
+{
+  "name": "@self/example",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite dev",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test:unit": "vitest",
+    "lint": "prettier --check --ignore-path=../../.prettierignore . && eslint \"src\" && svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+    "format": "prettier --write --ignore-path=../../.prettierignore .",
+    "clean": "rm -rf node_modules .turbo .svelte-kit"
+  },
+  "devDependencies": {
+    "@sveltejs/adapter-auto": "^2.0.0",
+    "@sveltejs/kit": "^1.5.0",
+    "eslint-config-custom": "workspace:*",
+    "svelte": "^3.54.0",
+    "svelte-check": "^3.0.1",
+    "tslib": "^2.4.1",
+    "typescript": "^5.0.0",
+    "vite": "^4.3.0",
+    "vitest": "^0.25.3"
+  },
+  "type": "module"
+}

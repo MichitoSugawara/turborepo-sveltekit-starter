@@ -17,6 +17,7 @@
     "test": {
       "cache": false
     },
+    "db:studio": {},
     "db:migrate": {},
     "db:push": {},
     "db:pull": {},

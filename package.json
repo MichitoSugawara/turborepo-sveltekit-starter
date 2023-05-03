@@ -7,13 +7,14 @@
     "format": "prettier --write .",
     "clean": "turbo run clean && rm -rf node_modules",
     "test": "turbo run test",
+    "db:studio": "turbo run db:studio",
     "db:migrate": "turbo run db:migrate",
     "db:push": "turbo run db:push",
     "db:pull": "turbo run db:pull",
     "db:seed": "turbo run db:seed",
     "env:devcontainer": "cp ./packages/prisma/.env.devcontainer  ./packages/prisma/.env",
     "init": "pnpm i && pnpm run build && pnpm run db:push",
-    "refresh": "pnpm run clean && pnpm run init",
+    "refresh": "pnpm run clean && pnpm i && pnpm run build",
     "check": "pnpm run format && pnpm run lint && pnpm run test"
   },
   "devDependencies": {
